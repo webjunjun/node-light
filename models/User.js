@@ -9,10 +9,10 @@ const User = (sequelize, DataTypes) => {
             primaryKey: true,// 主键
             autoIncrement: true,// 自动递增
         },
-        member_id: {
-            type: DataTypes.STRING,
-            comment: '会员ID'
-        },
+        // member_id: {
+        //     type: DataTypes.STRING,
+        //     comment: '会员ID'
+        // },
         nickname: {
             type: DataTypes.STRING,
             comment: '昵称'
