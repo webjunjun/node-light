@@ -5,7 +5,7 @@ const express = require('express');
 const path = require('path');// 处理文件路径的工具
 const cookieParser = require('cookie-parser');// 用于解析 cookie 头来填充 req.cookies
 const logger = require('morgan');// HTTP 请求记录器中间件
-const bodyParser = require('body-parser');// 用于使请求可以获取到req.body
+// const bodyParser = require('body-parser');// 用于使请求可以获取到req.body
 
 // 路由导入
 const indexRouter = require('./routes/index');
@@ -22,9 +22,9 @@ app.set('view engine', 'pug');
  * express提供的内置中间件有三种：static，json，urlencoded
  */
 app.use(logger('dev'));
-// app.use(express.json());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+// 用于使请求可以获取到req.body，body-parser已弃用
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 // 设置静态文件夹
